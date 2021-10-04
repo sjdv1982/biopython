@@ -60,18 +60,18 @@ There are several ways to access WellRecord objects from a PlateRecord objects:
   \item[Well identifier]
     If you know the well identifier (row + column identifiers) you can access the desired well directly.
 \begin{minted}{pycon}
-    >>> record["A02"]
-    \end{minted}
+>>> record["A02"]
+\end{minted}
 
-  \item[Well plate coordinates]
-    The same well can be retrieved by using the row and columns numbers (0-based index).
+tem[Well plate coordinates]
+The same well can be retrieved by using the row and columns numbers (0-based index).
 
-%doctest examples lib:numpy
-\begin{minted}{pycon}
+test examples lib:numpy
+in{minted}{pycon}
 >>> from Bio import phenotype
 >>> record = list(phenotype.parse("Plates.csv", "pm-csv"))[-1]
 >>> print(record[0, 1].id)
-A02
+
 \end{minted}
 
   \item[Row or column coordinates]
@@ -121,7 +121,7 @@ in the example below only the first ten time points are shown.
 %rest of code snippet output is truncated
 \begin{minted}{pycon}
 >>> for time, signal in well:
-...    print(time, signal)
+...     print(time, signal)
 ...
 (0.0, 12.0)
 (0.25, 18.0)
@@ -151,7 +151,7 @@ indexing; the default time interval is therefore one hour.
 
 %cont-doctest
 \begin{minted}{pycon}
->>> well[:10]  
+>>> well[:10]
 [12.0, 37.0, 44.0, 44.0, 44.0, 44.0, 44.0, 44.0, 44.0, 44.0]
 \end{minted}
 
@@ -246,8 +246,7 @@ the logistic and then the richards function. The user can also specify one of th
 >>> well.fit()
 >>> print("Function fitted: %s" % well.model)
 Function fitted: gompertz
->>> for param in ["area", "average_height", "lag", "max", "min",
-...               "plateau", "slope"]:
+>>> for param in ["area", "average_height", "lag", "max", "min", "plateau", "slope"]:
 ...     print("%s\t%.2f" % (param, getattr(well, param)))
 ...
 area    4414.38
